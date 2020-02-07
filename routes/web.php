@@ -11,6 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::name('blogs_path')->get('/blogs', 'BlogsController@index');
+Route::name('create_blog_path')->get('/blogs/create', 'BlogsController@create');
+Route::name('store_blog_path')->post('/blogs', 'BlogsController@store');
